@@ -1,47 +1,37 @@
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-body .dot {
+.dot {
+  position: absolute;
   width: 0;
-  height: 0;
-  background-color: black;
-  animation-name: circleani;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  animation: slideAnimation 2s ease-in-out;
 }
 
-@keyframes circleani {
+@keyframes slideAnimation {
   0% {
     width: 0;
     height: 0;
-    background-color: black;
-  }
-  25% {
-    background-color: yellow;
+    background-color: #000;
+    right: 0;
   }
   50% {
     width: 100%;
-    height: 100vh;
-    right: 100%;
-    left: 0;
-    background-color: black;
+    height: 100%;
+    right: 0;
+  }
+  51% {
+    width: 100%;
+    height: 100%;
+    left: 50%;
   }
   75% {
-    width: 50vw;
-    height: 100vh;
-    right: 100%;
-    left: 0;
+    right: 50%;
   }
   100% {
     width: 0;
-    height: 0;
-    background-color: white;
-    right: 0;
-    left: 100%;
+    height: 100%;
+    left: 0;
   }
 }
